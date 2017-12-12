@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+      <title>Registration Page</title>
+   </head>
+   <body>
+      <br/>
+      <div class="container">
+         <h3>
+            <b class="badge badge-secondary">
+               User Registration
+            </b>
+         </h3>
+         <hr/>
+         
+         {%- for category, message in get_flashed_messages(with_categories = true) %}
+            <div class = "alert alert-danger">
+               {{ message }}
+            </div>
+         {%- endfor %}
+         <div class="card bg-light border-dark">
+            <div class="card-body">
+               <form action = "{{ request.path }}" method = "post">
+                  <div class="form-group">
+                     <label for = "firstname">First Name</label><br>
+                     <input type = "text" name = "firstname" placeholder = "First Name" class="form-control" /><br>
+                  </div>
+                  <div class="form-group">
+                     <label for = "lastname">Last Name</label><br>
+                     <input type = "text" name = "lastname" placeholder = "First Name" class="form-control" /><br>
+                  </div>
+                  <div class="form-group">
+                     <label for = "city">City</label><br>
+                     <input type = "text" name = "city" placeholder = "City" class="form-control" /><br>
+                  </div>
+                  <div class="form-group">
+                     <label for = "addr">Address</label><br>
+                     <textarea name = "addr" placeholder = "Address" class="form-control"></textarea><br>
+                  </div>
+                  <div class="form-group">
+                     <label for = "pincode">Pincode</label><br>
+                     <input type = "text" name = "pincode" placeholder = "Pincode" class="form-control" /><br>
+                  </div>
+                  <div class="form-group">
+                     <label for = "email">Email</label><br>
+                     <input type = "text" name = "email" placeholder = "Email" class="form-control" /><br>
+                  </div>
+                  <div class="form-group">
+                     <label for = "password">Password</label><br>
+                     <input type = "password" name = "password" placeholder = "Password" class="form-control" /><br>
+                  </div>                 
+                  <input type = "submit" value = "Submit" class="btn btn-primary" />
+               </form>
+            </div>
+         </div>         
+      </div>
+   </body>
+</html>

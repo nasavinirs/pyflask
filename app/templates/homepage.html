@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<title>Home Page</title>
+</head>
+<body>
+	<br />
+	<div class="container">
+		<h1>Home Page</h1>
+		<br />
+		<a href = "{{ url_for('new_student') }}">Add new record</a>
+		<br />
+		<a href = "{{ url_for('list') }}">Show list</a>
+		<br />
+	</div>
+</body>
+</html>

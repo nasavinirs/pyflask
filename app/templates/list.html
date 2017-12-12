@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+   </head>
+   <body>
+      <br/>
+      <div class="container">
+         <table class="table table-sm table-striped table-bordered table-hover">
+            <thead class="thead-dark">
+               <th scope="col">Name</th>
+               <th scope="col">Address</th>
+               <th scope="col">City</th>
+               <th scope="col">Pincode</th>
+            </thead>
+            
+            {% for row in rows %}
+               <tr>
+                  <td>{{row["name"]}}</td>
+                  <td>{{row["addr"]}}</td>
+                  <td> {{ row["city"]}}</td>
+                  <td>{{row['pin']}}</td> 
+               </tr>
+            {% endfor %}
+         </table> 
+         <br/>
+         <a href = "/">Go back to home page</a>
+      </div>
+   </body>
+</html>

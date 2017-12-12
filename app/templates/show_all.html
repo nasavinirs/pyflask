@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+   </head>
+   <body>
+      <br/>
+      <div class="container">
+      <h3>
+         <b class="badge badge-secondary">
+            Student Details
+         </b>
+      </h3>
+      
+      <hr/>
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+		
+      <a class="btn btn-primary" href = "{{ url_for('new') }}">Add Student</a>
+      <br/><br/>
+      <table class="table table-sm table-striped table-bordered table-hover">
+         <thead class="thead-dark">
+            <tr>
+               <th scope="col">Name</th>
+               <th scope="col">City</th>
+               <th scope="col">Address</th>
+               <th scope="col">Pin</th>
+            </tr>
+         </thead>
+         
+         <tbody>
+            {% for student in students %}
+               <tr>
+                  <td>{{ student.name }}</td>
+                  <td>{{ student.city }}</td>
+                  <td>{{ student.addr }}</td>
+                  <td>{{ student.pin }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+     </div> 
+   </body>
+</html>
